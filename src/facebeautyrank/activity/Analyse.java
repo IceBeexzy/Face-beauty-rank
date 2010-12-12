@@ -3,7 +3,7 @@ package facebeautyrank.activity;
 public class Analyse {
 	public final double FACE_GOLDEN_RATIO=0.618;
 	public final double FACE_HEIGHT_RATIO=0.333333;
-	public final double EYES_WIGTH_RATIO = 0.42;
+	public final double EYES_WIDTH_RATIO = 0.42;
 	public final double FACE_WIDTH_RATIO = 0.618;
 	public final double CHIN_ANGLE_TAN = 1.6;
 	
@@ -21,7 +21,7 @@ public class Analyse {
 	private double eyesWidthRatio;
 	private double faceWidthRatio;
 	private double chinAngleTan;
-	
+	private int starLevel;
 	private double analyticResult;
 	
 	public Analyse() {
@@ -108,9 +108,18 @@ public class Analyse {
 	}
 
 	private void calculateResult() {
-		analyticResult = Math.sqrt(calculateVariance(faceGoldenRatio, FACE_GOLDEN_RATIO)+calculateVariance(faceHeightRatio, FACE_HEIGHT_RATIO)
-			+calculateVariance(eyesWidthRatio, EYES_WIGTH_RATIO)+calculateVariance(faceWidthRatio, FACE_WIDTH_RATIO)
-			+calculateVariance(chinAngleTan, CHIN_ANGLE_TAN));		
+		double temp=Math.sqrt(calculateVariance(faceGoldenRatio,FACE_GOLDEN_RATIO))+
+        Math.sqrt(calculateVariance(faceHeightRatio,FACE_HEIGHT_RATIO))+
+	    Math.sqrt(calculateVariance(eyesWidthRatio,EYES_WIDTH_RATIO))+
+	    Math.sqrt(calculateVariance(faceWidthRatio,FACE_WIDTH_RATIO))+
+	    Math.sqrt(calculateVariance(chinAngleTan,CHIN_ANGLE_TAN));
+
+		analyticResult=(calculateVariance(faceGoldenRatio, FACE_GOLDEN_RATIO)+
+		           calculateVariance(faceHeightRatio, FACE_HEIGHT_RATIO)+
+		           calculateVariance(eyesWidthRatio, EYES_WIDTH_RATIO)+
+		           calculateVariance(faceWidthRatio, FACE_WIDTH_RATIO)+
+		           calculateVariance(chinAngleTan, CHIN_ANGLE_TAN))
+		           /temp;	
 	}
 
 	private double calculateVariance(double actualValue,
@@ -123,15 +132,15 @@ public class Analyse {
 	}
 
 	public int getStarLevel(){
-		if(analyticResult<0.2)
-			return 1;
+		if(analyticResult<0.1)
+			return 5;
+		else if(analyticResult < 0.18)
+			return 4;
 		else if(analyticResult < 0.4)
-			return 2;
-		else if(analyticResult < 0.6)
 			return 3;
 		else if(analyticResult < 0.8)
-			return 4;
+			return 2;
 		else
-			return 0;
+			return 1;
 	}
 }

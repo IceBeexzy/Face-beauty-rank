@@ -12,15 +12,17 @@ public final class R {
     }
     public static final class drawable {
         public static final int close=0x7f020000;
-        public static final int fivestars=0x7f020001;
-        public static final int fourstars=0x7f020002;
-        public static final int icon=0x7f020003;
-        public static final int onestar=0x7f020004;
-        public static final int op1=0x7f020005;
-        public static final int open=0x7f020006;
-        public static final int photoframe=0x7f020007;
-        public static final int threestars=0x7f020008;
-        public static final int twostars=0x7f020009;
+        public static final int feng=0x7f020001;
+        public static final int fivestars=0x7f020002;
+        public static final int fourstars=0x7f020003;
+        public static final int icon=0x7f020004;
+        public static final int onestar=0x7f020005;
+        public static final int op1=0x7f020006;
+        public static final int open=0x7f020007;
+        public static final int photoframe=0x7f020008;
+        public static final int threestars=0x7f020009;
+        public static final int twostars=0x7f02000a;
+        public static final int zhi=0x7f02000b;
     }
     public static final class id {
         public static final int BackToMenuButton=0x7f05001d;
