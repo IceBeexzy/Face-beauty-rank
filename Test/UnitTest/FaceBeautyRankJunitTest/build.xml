@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="FaceBeautyRankJunitTest">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../eclipse-SDK-3.5.2-win32/eclipse"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="FaceBeautyRank.location" value="../FaceBeautyRank"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="Android 2.1-update1.libraryclasspath">
+        <pathelement location="D:/android-sdk-windows/platforms/android-7/android.jar"/>
+    </path>
+    <path id="FaceBeautyRank.classpath">
+        <pathelement location="${FaceBeautyRank.location}/bin"/>
+        <path refid="Android 2.1-update1.libraryclasspath"/>
+    </path>
+    <path id="Android 2.2.libraryclasspath">
+        <pathelement location="D:/android-sdk-windows/platforms/android-8/android.jar"/>
+    </path>
+    <path id="JUnit 4.libraryclasspath">
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.junit4_4.5.0.v20090824/junit.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.hamcrest.core_1.1.0.v20090501071000.jar"/>
+    </path>
+    <path id="FaceBeautyRankJunitTest.classpath">
+        <pathelement location="bin"/>
+        <path refid="FaceBeautyRank.classpath"/>
+        <path refid="Android 2.2.libraryclasspath"/>
+        <path refid="JUnit 4.libraryclasspath"/>
+        <pathelement location="robotium/robotium-solo-1.8.0.jar"/>
+        <pathelement location="robotium/robotium-solo-1.8.0-javadoc.jar"/>
+    </path>
+    <path id="run.facebeautyrank.activity.test.helpactivity.classpath">
+        <path refid="Android 2.2.libraryclasspath"/>
+        <path refid="FaceBeautyRankJunitTest.classpath"/>
+    </path>
+    <path id="run.facebeautyrank.activity.test.helpactivity.bootclasspath"/>
+    <path id="run.FaceBeautyRankJunitTest (1).classpath">
+        <path refid="Android 2.2.libraryclasspath"/>
+        <path refid="FaceBeautyRankJunitTest.classpath"/>
+    </path>
+    <path id="run.FaceBeautyRankJunitTest (1).bootclasspath"/>
+    <path id="run.PerfaceActivityUIJunitTest (1).classpath">
+        <path refid="Android 2.2.libraryclasspath"/>
+        <path refid="FaceBeautyRankJunitTest.classpath"/>
+    </path>
+    <path id="run.PerfaceActivityUIJunitTest (1).bootclasspath"/>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="gen">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall">
+        <ant antfile="${FaceBeautyRank.location}/build.xml" dir="${FaceBeautyRank.location}" inheritAll="false" target="clean"/>
+    </target>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects">
+        <ant antfile="${FaceBeautyRank.location}/build.xml" dir="${FaceBeautyRank.location}" inheritAll="false" target="build-project">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+    </target>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="FaceBeautyRankJunitTest.classpath"/>
+        </javac>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+            <src path="gen"/>
+            <classpath refid="FaceBeautyRankJunitTest.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="facebeautyrank.activity.test.helpactivity">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="facebeautyrank.activity.test.helpactivity.HelpActivityAllTests" todir="${junit.output.dir}"/>
+            <test name="facebeautyrank.activity.test.helpactivity.HelpActivityUIJunitTest" todir="${junit.output.dir}"/>
+            <classpath refid="run.facebeautyrank.activity.test.helpactivity.classpath"/>
+            <bootclasspath>
+                <path refid="run.facebeautyrank.activity.test.helpactivity.bootclasspath"/>
+            </bootclasspath>
+        </junit>
+    </target>
+    <target name="FaceBeautyRankJunitTest (1)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="facebeautyrank.activity.test.drawlineactivity.DrawLineActivityAllTests" todir="${junit.output.dir}"/>
+            <test name="facebeautyrank.activity.test.drawlineactivity.DrawLineActivityFunctionJunitTest" todir="${junit.output.dir}"/>
+            <test name="facebeautyrank.activity.test.drawlineactivity.DrawLineActivityUIJunitTest" todir="${junit.output.dir}"/>
+            <test name="facebeautyrank.activity.test.helpactivity.HelpActivityAllTests" todir="${junit.output.dir}"/>
+            <test name="facebeautyrank.activity.test.helpactivity.HelpActivityUIJunitTest" todir="${junit.output.dir}"/>
+            <test name="facebeautyrank.activity.test.perfaceactivity.PerfaceActivityAllTests" todir="${junit.output.dir}"/>
+            <test name="facebeautyrank.activity.test.perfaceactivity.PerfaceActivityFunctionJunitTest" todir="${junit.output.dir}"/>
+            <test name="facebeautyrank.activity.test.perfaceactivity.PerfaceActivityUIJunitTest" todir="${junit.output.dir}"/>
+            <test name="facebeautyrank.activity.test.resultpageactivity.ResultPageActivityAllTests" todir="${junit.output.dir}"/>
+            <test name="facebeautyrank.activity.test.resultpageactivity.ResultPageActivityFunctionJunitTest" todir="${junit.output.dir}"/>
+            <test name="facebeautyrank.activity.test.resultpageactivity.ResultPageActivityUIJunitTest" todir="${junit.output.dir}"/>
+            <test name="facebeautyrank.activity.test.selectactivity.SelectActivityAllTests" todir="${junit.output.dir}"/>
+            <test name="facebeautyrank.activity.test.selectactivity.SelectActivityFunctionJunitTest" todir="${junit.output.dir}"/>
+            <test name="facebeautyrank.activity.test.selectactivity.SelectActivityUIJunitTest" todir="${junit.output.dir}"/>
+            <test name="facebeautyrank.activity.test.usecameraactivity.UseCameraActivityAllTests" todir="${junit.output.dir}"/>
+            <test name="facebeautyrank.activity.test.usecameraactivity.UseCameraActivityFunctionJunitTest" todir="${junit.output.dir}"/>
+            <test name="facebeautyrank.activity.test.usecameraactivity.UseCameraActivityUIJunitTest" todir="${junit.output.dir}"/>
+            <test name="facebeautyrank.activity.test.usegalleryactivity.UseGalleryActivityAllTests" todir="${junit.output.dir}"/>
+            <test name="facebeautyrank.activity.test.usegalleryactivity.UseGalleryActivityFunctionJunitTest" todir="${junit.output.dir}"/>
+            <test name="facebeautyrank.activity.test.usegalleryactivity.UseGalleryActivityUIJunitTest" todir="${junit.output.dir}"/>
+            <test name="facebeautyrank.count.test.CoubtAllTests" todir="${junit.output.dir}"/>
+            <test name="facebeautyrank.test.alltest.AllTests" todir="${junit.output.dir}"/>
+            <classpath refid="run.FaceBeautyRankJunitTest (1).classpath"/>
+            <bootclasspath>
+                <path refid="run.FaceBeautyRankJunitTest (1).bootclasspath"/>
+            </bootclasspath>
+        </junit>
+    </target>
+    <target name="PerfaceActivityUIJunitTest (1)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="facebeautyrank.activity.test.perfaceactivity.PerfaceActivityUIJunitTest" todir="${junit.output.dir}"/>
+            <classpath refid="run.PerfaceActivityUIJunitTest (1).classpath"/>
+            <bootclasspath>
+                <path refid="run.PerfaceActivityUIJunitTest (1).bootclasspath"/>
+            </bootclasspath>
+        </junit>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+</project>

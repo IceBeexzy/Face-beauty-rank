@@ -1,0 +1,85 @@
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+#  Internal Error (classFileParser.cpp:2923), pid=5992, tid=4196
+#  Error: ShouldNotReachHere()
+#
+# Java VM: Java HotSpot(TM) Client VM (11.0-b15 mixed mode windows-x86)
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x011f9800):  JavaThread "Unknown thread" [_thread_in_vm, id=4196, stack(0x002c0000,0x00310000)]
+
+Stack: [0x002c0000,0x00310000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x011f9800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=4196, stack(0x002c0000,0x00310000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	C:\Program Files\Java\jre6\bin\javaw.exe
+0x77d40000 - 0x77e7c000 	C:\Windows\SYSTEM32\ntdll.dll
+0x764f0000 - 0x765c4000 	C:\Windows\system32\kernel32.dll
+0x75ff0000 - 0x7603a000 	C:\Windows\system32\KERNELBASE.dll
+0x76b00000 - 0x76ba0000 	C:\Windows\system32\ADVAPI32.dll
+0x76bd0000 - 0x76c7c000 	C:\Windows\system32\msvcrt.dll
+0x76a00000 - 0x76a19000 	C:\Windows\SYSTEM32\sechost.dll
+0x766a0000 - 0x76741000 	C:\Windows\system32\RPCRT4.dll
+0x765d0000 - 0x76699000 	C:\Windows\system32\USER32.dll
+0x76c80000 - 0x76cce000 	C:\Windows\system32\GDI32.dll
+0x77e90000 - 0x77e9a000 	C:\Windows\system32\LPK.dll
+0x77050000 - 0x770ed000 	C:\Windows\system32\USP10.dll
+0x767e0000 - 0x767ff000 	C:\Windows\system32\IMM32.DLL
+0x76de0000 - 0x76eac000 	C:\Windows\system32\MSCTF.dll
+0x6d840000 - 0x6d85a000 	C:\PROGRA~1\KASPER~1\KASPER~1\mzvkbd3.dll
+0x7c340000 - 0x7c396000 	C:\Program Files\Java\jre6\bin\msvcr71.dll
+0x01af0000 - 0x01d46000 	C:\Program Files\Java\jre6\bin\client\jvm.dll
+0x74680000 - 0x746b2000 	C:\Windows\system32\WINMM.dll
+0x75d90000 - 0x75ddb000 	C:\Windows\system32\apphelp.dll
+0x6d280000 - 0x6d288000 	C:\Program Files\Java\jre6\bin\hpi.dll
+0x76190000 - 0x76195000 	C:\Windows\system32\PSAPI.DLL
+0x6d7b0000 - 0x6d7bc000 	C:\Program Files\Java\jre6\bin\verify.dll
+0x6d320000 - 0x6d33f000 	C:\Program Files\Java\jre6\bin\java.dll
+0x6d7f0000 - 0x6d7ff000 	C:\Program Files\Java\jre6\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=GBK -Xbootclasspath:D:\android-sdk-windows\platforms\android-8\android.jar 
+java_command: org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 55690 -testLoaderClass org.eclipse.jdt.internal.junit.runner.junit3.JUnit3TestLoader -loaderpluginname org.eclipse.jdt.junit.runtime -classNames facebeautyrank.activity.test.PerfaceActivityJunitTest
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Java\jdk1.6.0_10;
+CLASSPATH=C:\Java\jdk1.6.0_10\lib\dt.jar;C:\Java\jdk1.6.0_10\lib\tools.jar
+PATH=C:/Program Files/Java/jre6/bin/client;C:/Program Files/Java/jre6/bin;D:\Ruby186\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Common Files\Thunder Network\KanKan\Codecs;C:\Program Files\Common Files\Ulead Systems\MPEG;D:\Windows7Master;D:\Storm\Codec;D:\Storm;E:\MASM611\BINR;E:\MASM611\BIN;C:\Java\jdk1.6.0_10\bin;C:\Java\jdk1.6.0_10\lib;C:\Java\jdk1.6.0_10\bin;D:\android-sdk-windows\tools;D:\apache-ant-1.8.1\bin;D:\Git\bin
+USERNAME=Ice
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 23 Stepping 6, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows NT 6.1 Build 7600 
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 7 stepping 6, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3
+
+Memory: 4k page, physical 2097151k(1135876k free), swap 4194303k(4173352k free)
+
+vm_info: Java HotSpot(TM) Client VM (11.0-b15) for windows-x86 JRE (1.6.0_10-rc2-b32), built on Sep 12 2008 00:52:11 by "java_re" with MS VC++ 7.1
+
+time: Sat Dec 25 23:36:18 2010
+elapsed time: 0 seconds
+
