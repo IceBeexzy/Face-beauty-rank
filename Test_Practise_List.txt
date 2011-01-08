@@ -1,0 +1,41 @@
+测试文件分布：
+
+单元测试：
+ Test / UnitTest / FaceBeautyRankJunitTest /
+build.xml :
+Test / UnitTest / FaceBeautyRankJunitTest / build.xml
+单元测试描述：
+Test / UnitTest / FaceBeautyRankUnitTestDescription.doc 
+单元测试代码覆盖率描述：
+Test / FaceBeautyRankCoverageDescription.doc
+
+
+系统测试：
+Test / SystemTest /
+系统测试描述：
+Test / SystemTest / FaceBeautyRankSystemTestDescription.doc
+
+Functional/UI Test:
+Test / SystemTest / FunctionalUITest / JunitFunctionalUITest /
+Test / SystemTest / FunctionalUITest / ExpendedFunctionalUITest / 
+build.xml:
+Test / SystemTest / FunctionalUITest / ExpendedFunctionalUITest / build.xml
+
+
+PerformanceTest :
+Test / SystemTest / PerformanceTest / FaceBeautyRankPerformanceTest /
+build.xml:
+Test / SystemTest  / PerformanceTest / FaceBeautyRankPerformanceTest / build.xml
+
+
+UsabilityTest:
+Test / SystemTest / UsabilityTest / FaceBeautyRankUsabilityTestReport.doc
+
+Junit ,  Functional/UI Test , PerformanceTest 需要用到源工程，均附在各测试
+工程相应文件夹下，以FaceBeautyRank 命名
+
+BugTracker:
+Test / FaceBeautyRankBugTracker.doc
+
+
+
